@@ -2,6 +2,9 @@ package com.altasbookshop;
 
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class Product {
@@ -12,13 +15,19 @@ public class Product {
     private  Float price;
 
     public Product() {
-        super();
+        //super();
     }
 
     public long getId() {
         return id;
     }
 
+
+    //Add annotation for the ID from JPA to indicate that this matches the priamry column in the database
+    // Next - GenetateValue annotation from JPA
+
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
     public void setId(long id) {
         this.id = id;
     }
