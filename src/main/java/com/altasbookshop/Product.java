@@ -8,27 +8,26 @@ import javax.persistence.Id;
 
 @Entity
 public class Product {
-    private  long id;
-    private  String name;
-    private  String brand;
+    private Long id;
+    private String name;
+    private String brand;
     private String madein;
-    private  Float price;
+    private Float price;
 
-    public Product() {
-        //super();
+     protected Product() {
+         //Super();
     }
-
-    public long getId() {
-        return id;
-    }
-
 
     //Add annotation for the ID from JPA to indicate that this matches the priamry column in the database
     // Next - GenetateValue annotation from JPA
 
-@Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
-    public void setId(long id) {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
         this.id = id;
     }
 
