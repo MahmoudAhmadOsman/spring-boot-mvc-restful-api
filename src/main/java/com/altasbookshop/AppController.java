@@ -1,5 +1,6 @@
-package com.altasbookshop;
+//Step 3
 
+package com.altasbookshop;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

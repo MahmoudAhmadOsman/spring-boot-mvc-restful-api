@@ -13,19 +13,20 @@ public class Product {
     private String brand;
     private String madein;
     private Float price;
-
+//2.
      protected Product() {
          //Super();
     }
 
-    //Add annotation for the ID from JPA to indicate that this matches the priamry column in the database
+    //4. Add annotation for the ID from JPA to indicate that this matches the priamry column in the database
     // Next - GenetateValue annotation from JPA
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //3.
     public Long getId() {
         return id;
     }
+
 
     public void setId(Long id) {
         this.id = id;

@@ -1,3 +1,4 @@
+//Step 2
 package com.altasbookshop;
 
 // Annotate this class with Spring Boot Annotation class
@@ -12,9 +13,7 @@ public class ProductService {
     // get the ProductRepository and wire it here
     @Autowired
     private ProductRepository repo;
-
     //Here is where you will put all the crud logic
-
     //1. Read () method -  Get all the products from the database - a list of all products usin list<> method
 
     public List<Product> listAll(){
@@ -22,7 +21,6 @@ public class ProductService {
     }
 
     //2. Save () all products using save method
-
     public void  save(Product product){
          repo.save(product);
     }
@@ -33,15 +31,11 @@ public class ProductService {
         return repo.findById(id).get(); // in order to get the actual id use get() method
     }
 
-
     //4 . Delete () Method
     // delete product by its id
 
 public void delete(Long id){
     repo.deleteById(id);
 }
-
-
-
 
 }
