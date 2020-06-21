@@ -28,27 +28,27 @@ public class AppController {
         List<Product> listProducts = service.listAll();
         model.addAttribute("listProducts", listProducts);
 
-            //Now return the page you want this request to go
+    //Now return the page you want this request to go
         return  "index";
     }
 
 
 // Creating new product route
-//Map the form URL to /new
+//Map the form URL to /new page that holds the HTML form
 @RequestMapping("/new")
 public String showNewProductForm(Model model){
-        //Create new product object
+   //1st Create new product object
     Product product = new Product();
     model.addAttribute("prodcut", product);
-return  "new_product";
+return  "new_product"; // new_product is the name of the form that holds the HTML form
 }
 
 
-// Save the product to the database
+//2nd Save the product into the database
 @RequestMapping(value = "/save", method = RequestMethod.POST)
 public String saveProduct(@ModelAttribute ("product") Product product){
     service.save(product);
-    return  "redirect:/";
+    return  "redirect:/"; // Redirect the user to the home page
 }
 
 
