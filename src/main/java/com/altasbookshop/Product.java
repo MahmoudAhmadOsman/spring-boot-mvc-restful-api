@@ -7,7 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Product {
+public class Product { // this will also create a product table in the database (MYSQL)
     private Long id;
     private String name;
     private String brand;
