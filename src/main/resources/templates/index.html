@@ -39,9 +39,10 @@
                         <td th:text="${product.brand}"></td>
                         <td th:text="${product.madein}"></td>
                         <td th:text="${product.price}"></td>
-                        <td th:text="${product.id}">
-                            <a href="#" class="btn btn-info btn-sm">Edit</a>
-                            <a href="#" class="btn btn-danter btn-sm">Delete</a>
+                        <td>
+
+                            <a href="/${product.id}" class="btn btn-info btn-sm">Edit</a>
+                            <a href="/${product.id}" class="btn btn-danger btn-sm">Delete</a>
                         </td>
                     </tr>
                     </tbody>
