@@ -13,7 +13,7 @@ public class Product {
     private String brand;
     private String madein;
     private Float price;
-//2.
+//2. create an empty constructor
      protected Product() {
          //Super();
     }
