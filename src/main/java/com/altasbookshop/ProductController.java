@@ -64,12 +64,13 @@ public String saveProduct(@ModelAttribute ("product") Product product){
 //======= Edit product  ==========
 @RequestMapping("/edit/{id}")
 public ModelAndView EditProduct(@PathVariable(name ="id") long id){
-        ModelAndView mav = new ModelAndView("edit_product");
+        // [ModelAndView] => This class merely holds both to make it possible for a controller to return both model and view in a single return value
+        ModelAndView edit = new ModelAndView("edit_product");
 
         Product product = service.get(id);
-        mav.addObject("product", product);
+        edit.addObject("product", product);
 
-    return mav;
+    return edit;
 }
 
 
