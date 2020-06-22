@@ -33,7 +33,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <!--        listProducts should match the variable that you specifid in the controller-->
+                    <!-- listProducts should match the variable that you specifid in the controller-->
                     <tr th:each="product: ${listProducts}">
                         <td th:text="${product.id}"></td>
                         <td th:text="${product.name}"></td>
@@ -52,7 +52,7 @@
         </div>
         <div class="col-md-2" style="background-color:#ccc; color: #333; height: 100vh;">
             <h3>
-                <a href="new" class="btn btn-primary">Create New Products</a>
+                <a href="products/new" class="btn btn-primary">Create New Products</a>
             </h3>
         </div>
     </div>

@@ -13,6 +13,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
+//======= Product Controller ==========
+
 //Annotate this class with Spring Boot annotation class
 @Controller
 public class ProductController {
@@ -35,9 +37,11 @@ public class ProductController {
     }
 
 
+    //======= Creating New Product ==========
+
 // Creating new product route
 //Map the form URL to /new page that holds the HTML form
-@RequestMapping("/new")
+@RequestMapping("/products/new")
 public String showProduct(Model model){
    //1st Create new product object
     Product product = new Product();
