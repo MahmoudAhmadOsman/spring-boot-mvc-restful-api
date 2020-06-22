@@ -15,7 +15,7 @@ import java.util.List;
 
 //Annotate this class with Spring Boot annotation class
 @Controller
-public class AppController {
+public class ProductController {
     //1st get the domain class here in controller
     //2nd user autowire to let Spring inject products
     @Autowired
@@ -24,7 +24,7 @@ public class AppController {
     //Now create a view that handles requests and use RequestMapping mvc
     // And specify the route using double quotes
     @RequestMapping("/")
-    public  String viewHomePage(Model model){
+    public  String HomePage(Model model){
         //use the List () method and get all the products
         // this method is defined in the ProductService class
         List<Product> listProducts = service.listAll();
@@ -38,7 +38,7 @@ public class AppController {
 // Creating new product route
 //Map the form URL to /new page that holds the HTML form
 @RequestMapping("/new")
-public String showNewProductForm(Model model){
+public String showProduct(Model model){
    //1st Create new product object
     Product product = new Product();
     model.addAttribute("prodcut", product);
@@ -59,7 +59,7 @@ public String saveProduct(@ModelAttribute ("product") Product product){
 
 //======= Edit product  ==========
 @RequestMapping("/edit/{id}")
-public ModelAndView showEditProductForm(@PathVariable(name ="id") long id){
+public ModelAndView EditProduct(@PathVariable(name ="id") long id){
         ModelAndView mav = new ModelAndView("edit_product");
 
         Product product = service.get(id);
