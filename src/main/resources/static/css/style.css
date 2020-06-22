@@ -4,3 +4,15 @@ body{
 h1{
    font-size: 40px;
 }
+
+/*Create new product page*/
+.create_header{
+   display: block;
+}
+.create_header a.go_back{
+  float: left;
+
+}
+.create_header h2{
+   text-align: center;
+}

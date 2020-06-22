@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleave.org">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="utf-8">
@@ -10,34 +11,39 @@
     <title>Products Page | Mahmoud Osman</title>
         
     <link th:href="@{/css/style.css}" rel="stylesheet" />
-    <title>Create New Product</title>
+    <title>Edit Product</title>
 </head>
 
 <body>
 <section class="container">
-    <div class="create_header">
-        <a href="/" class="go_back">  <h5>< Go back</h5></a>
-        <h2 class="text-primary">Create New Product</h2> <hr>
-    </div>
+
+        <h2 class="text-primary">Edit  Product</h2> <hr>
+
 
     <div class="col-md-8 col-md-offset-2">
-        <!--        th:object="${product}", should match the name you specified in the create (new) form attribute -->
         <form action="#" th:action="@{/save}" th:object="${product}" method="POST">
+
+            <div class="form-group">
+                <label>Prodcut ID</label>
+                <input type="text" class="form-control input-lg" th:field="*{id}" readonly="readonly" />
+            </div>
+
+
             <div class="form-group">
                 <label>Prodcut Name</label>
-                <input type="text" class="form-control input-lg" name="name" placeholder="Enter product name" required />
+                <input type="text" class="form-control input-lg" th:field="*{name}" required />
             </div>
             <div class="form-group">
                 <label>Prodcut Brand Name</label>
-                <input type="text" class="form-control input-lg" name="brand" placeholder="Enter product brand name" required />
+                <input type="text" class="form-control input-lg" th:field="*{brand}" required />
             </div>
             <div class="form-group">
                 <label>Where the product is made?</label>
-                <input type="text" class="form-control input-lg" name="madein" placeholder="Where the product is made?" />
+                <input type="text" class="form-control input-lg" th:field="*{madein}" required/>
             </div>
             <div class="form-group">
                 <label>Price</label>
-                <input type="text" class="form-control input-lg" name="price" placeholder="$0.0" />
+                <input type="text" class="form-control input-lg" th:field="*{price}" required />
             </div>
             <button type="submit" class="btn btn-primary"><b>SUBMIT</b></button>
         </form>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleave.org">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="utf-8">
@@ -38,11 +39,11 @@
                         <td th:text="${product.name}"></td>
                         <td th:text="${product.brand}"></td>
                         <td th:text="${product.madein}"></td>
-                        <td th:text="${product.price}"></td>
+                        <td th:text="${product.price}" class="text-danger"></td>
                         <td>
 
-                            <a href="/${product.id}" class="btn btn-info btn-sm">Edit</a>
-                            <a href="/${product.id}" class="btn btn-danger btn-sm">Delete</a>
+                            <a th:href="@{'/edit/' + ${product.id}}" class="btn btn-info btn-sm">Edit</a>
+                            <a th:href="@{'/delete/' + ${product.id}}" class="btn btn-danger btn-sm">Delete</a>
                         </td>
                     </tr>
                     </tbody>
@@ -51,7 +52,7 @@
         </div>
         <div class="col-md-2" style="background-color:#ccc; color: #333; height: 100vh;">
             <h3>
-                <a href="new" class="btn btn-primary">Cleate New Products</a>
+                <a href="new" class="btn btn-primary">Create New Products</a>
             </h3>
         </div>
     </div>
