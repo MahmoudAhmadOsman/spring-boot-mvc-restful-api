@@ -14,6 +14,7 @@
 </head>
 
 <body>
+
 <section class="container">
     <div class="row">
         <div class="col-md-10">
@@ -43,20 +44,21 @@
                         <td>
 
                             <a th:href="@{'/edit/' + ${product.id}}" class="btn btn-info btn-sm">Edit</a>
-                            <a th:href="@{'/delete/' + ${product.id}}" class="btn btn-danger btn-sm">Delete</a>
+                            <a th:href="@{'/delete/' + ${product.id}}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure, you want to delete this record?');">Delete</a>
                         </td>
                     </tr>
                     </tbody>
                 </table>
             </div>
         </div>
-        <div class="col-md-2" style="background-color:#ccc; color: #333; height: 100vh;">
+        <div class="col-md-2" style="background-color:#f9f9f9; color: #333; height: 100vh;">
             <h3>
                 <a href="products/new" class="btn btn-primary">Create New Products</a>
             </h3>
         </div>
     </div>
 </section>
+</div>
 <section class="copy-right text-center">
     <p>&copy; Copyright. 2019. Mahmoud Osman. All Rights Reserved.</p>
 </section>
