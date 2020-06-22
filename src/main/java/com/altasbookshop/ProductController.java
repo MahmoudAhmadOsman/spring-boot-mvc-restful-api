@@ -69,6 +69,7 @@ public ModelAndView EditProduct(@PathVariable(name ="id") long id){
 
         Product product = service.get(id);
         edit.addObject("product", product);
+        //edit.addObject("message", "EDIT sucessfully completed");
 
     return edit;
 }
@@ -79,6 +80,8 @@ public ModelAndView EditProduct(@PathVariable(name ="id") long id){
     @RequestMapping("/delete/{id}")
     public String deleteProduct(@PathVariable(name = "id") long id) {
         service.delete(id);
+
+
         return "redirect:/";
     }
 
