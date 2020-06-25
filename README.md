@@ -26,4 +26,4 @@ Please, visit my website
 
 ### Social Media
 
-LinkedIn Link:[LinkedIn](https://www.linkedin.com/in/mahmoudaoman/)
+LinkedIn Profile Link: [LinkedIn](https://www.linkedin.com/in/mahmoudaoman/) 
