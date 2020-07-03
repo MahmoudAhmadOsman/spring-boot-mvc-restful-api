@@ -46,7 +46,7 @@ public String showProduct(Model model){
    //1st Create new product object
     Product product = new Product();
     model.addAttribute("prodcut", product);
-return  "new_product"; // new_product is the name of the form that holds the HTML form
+    return  "create";     // new_product is the name of the form that holds the HTML form
 }
 
 
@@ -65,7 +65,7 @@ public String saveProduct(@ModelAttribute ("product") Product product){
 @RequestMapping("/edit/{id}")
 public ModelAndView EditProduct(@PathVariable(name ="id") long id){
         // [ModelAndView] => This class merely holds both to make it possible for a controller to return both model and view in a single return value
-        ModelAndView edit = new ModelAndView("edit_product");
+        ModelAndView edit = new ModelAndView("edit");
 
         Product product = service.get(id);
         edit.addObject("product", product);
