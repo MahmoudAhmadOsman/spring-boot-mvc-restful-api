@@ -21,7 +21,7 @@ Please, feel free to contrubute to this and correct me if you see anything wrong
 ### My Website
 
 Please, visit my website
-[netsansoftwarec.com](https://www.netsansoftware.com/)
+[mahmoudosman.com](http://www.mahmoudosman.com/)
 
 
 ### Social Media
