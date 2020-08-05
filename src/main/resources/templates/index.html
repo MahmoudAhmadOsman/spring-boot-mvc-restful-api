@@ -5,6 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -43,8 +44,12 @@
                         <td th:text="${product.price}" class="text-danger"></td>
                         <td>
 
-                            <a th:href="@{'/edit/' + ${product.id}}" class="btn btn-info btn-sm">Edit</a>
-                            <a th:href="@{'/delete/' + ${product.id}}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure, you want to delete this record?');">Delete</a>
+                            <a th:href="@{'/edit/' + ${product.id}}" class="btn btn-info btn-sm">
+                                <span class="fa fa-edit"></span>
+                                Edit</a>
+                            <a th:href="@{'/delete/' + ${product.id}}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure, you want to delete this record?');">
+                                <i class="fa fa-trash"></i>
+                                Delete</a>
                         </td>
                     </tr>
                     </tbody>
