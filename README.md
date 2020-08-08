@@ -7,7 +7,7 @@ I built this project with [Spring](https://spring.io/projects/spring-boot) Boot,
 To clone this project use this command
 
 ```bash
-$ git clone https:https://github.com/MahmoudAhmadOsman/spring-boot-mvc-restful-api.git
+$ git clone https://github.com/MahmoudAhmadOsman/spring-boot-mvc-restful-api.git
 ```
 
 
