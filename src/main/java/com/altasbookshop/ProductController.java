@@ -19,7 +19,7 @@ import java.util.List;
 @Controller
 public class ProductController {
     //1st get the domain class here in controller
-    //2nd user autowire to let Spring inject products
+    //2nd use autowire to let Spring inject products
     @Autowired
     private ProductService service;
 
