@@ -44,12 +44,12 @@
                         <td th:text="${product.price}" class="text-danger"></td>
                         <td>
 
-                            <a th:href="@{'/edit/' + ${product.id}}" class="btn btn-info btn-sm">
+                            <a th:href="@{'/edit/' + ${product.id}}" class="btn btn-info btn-sm" title="Edit product">
                                 <span class="fa fa-edit"></span>
-                                Edit</a>
-                            <a th:href="@{'/delete/' + ${product.id}}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure, you want to delete this record?');">
+                                </a>
+                            <a th:href="@{'/delete/' + ${product.id}}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure, you want to delete this record?');" title="Delete product">
                                 <i class="fa fa-trash"></i>
-                                Delete</a>
+                                </a>
                         </td>
                     </tr>
                     </tbody>
@@ -65,7 +65,7 @@
 </section>
 </div>
 <section class="copy-right text-center">
-    <p>&copy; Copyright. 2019. Mahmoud Osman. All Rights Reserved.</p>
+    <p>&copy; Copyright. 2019. <a href="http://mahmoudosman.com/" target="_blank">Mahmoud Osman</a>.   All Rights Reserved.</p>
 </section>
 <script type="text/javascript" th:src="@{/js/custom.js}"></script>
 </body>
