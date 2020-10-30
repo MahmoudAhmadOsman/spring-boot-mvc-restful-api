@@ -31,6 +31,7 @@ public class ProductService {
 
     //3. Get PRODUCT by ID  or Find Product by its id
     public Product get(Long id){
+
         return repo.findById(id).get(); // in order to get the actual id use get() method
     }
 
