@@ -21,7 +21,7 @@ public class ProductController {
     //1st get the domain class here in controller
     //2nd use autowire to let Spring inject product service here
     @Autowired
-    private ProductService service;
+    private ProductService productServiceservice;
 
     //Now create a view that handles requests and use RequestMapping mvc
     // And specify the route using double quotes
@@ -29,7 +29,7 @@ public class ProductController {
     public  String HomePage(Model model){
         //use the List () method and get all the products
         // this method is defined in the ProductService class
-        List<Product> listProducts = service.listAll();
+        List<Product> listProducts = productServiceservice.listAll();
         model.addAttribute("listProducts", listProducts);
 
     //Now return the page you want this request to go
@@ -53,7 +53,7 @@ public String showProduct(Model model){
 //2nd Save the product into the database
 @RequestMapping(value = "/save", method = RequestMethod.POST)
 public String saveProduct(@ModelAttribute ("product") Product product){
-    service.save(product);
+    productServiceservice.save(product);
     return  "redirect:/"; // Redirect the user to the home page
 }
 
@@ -67,9 +67,9 @@ public ModelAndView EditProduct(@PathVariable(name ="id") long id){
         // [ModelAndView] => This class merely holds both to make it possible for a controller to return both model and view in a single return value
         ModelAndView edit = new ModelAndView("edit");
 
-        Product product = service.get(id);
+        Product product = productServiceservice.get(id);
         edit.addObject("product", product);
-        //edit.addObject("message", "EDIT sucessfully completed");
+        //edit.addObject("message", "EDIT successfully completed");
 
     return edit;
 }
@@ -79,7 +79,7 @@ public ModelAndView EditProduct(@PathVariable(name ="id") long id){
 
     @RequestMapping("/delete/{id}")
     public String deleteProduct(@PathVariable(name = "id") long id) {
-        service.delete(id);
+        productServiceservice.delete(id);
 
 
         return "redirect:/";
