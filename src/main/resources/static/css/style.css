@@ -17,3 +17,9 @@ h1{
 .create_header h2{
    text-align: center;
 }
+
+.copy-right{
+    margin-top: 60px;
+    background-color: #413c3c;
+    color: #bbb5b5;
+}
