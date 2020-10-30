@@ -18,8 +18,8 @@ public class Product { // this will also create a product table in the database 
          //Super();
     }
 
-    //4. Add annotation for the ID from JPA to indicate that this matches the priamry column in the database
-    // Next - GenetateValue annotation from JPA
+    //4. Add annotation for the ID from JPA to indicate that this matches the primary column in the database
+    // Next - GeneratedValue annotation from JPA
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     //3.

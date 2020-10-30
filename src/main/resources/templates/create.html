@@ -4,20 +4,22 @@
 
 <head>
     <meta charset="utf-8">
+    <title>Create New Product</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Products Page | Mahmoud Osman</title>
         
     <link th:href="@{/css/style.css}" rel="stylesheet" />
-    <title>Create New Product</title>
+
 </head>
 
 <body>
 <section class="container">
     <div class="create_header">
-        <a href="/" class="go_back">  <h5>< Go back</h5></a>
+        <a href="/" class="go_back">  <h5> <i class="fa fa-chevron-left" aria-hidden="true"></i> Go back</h5></a>
         <h2 class="text-primary">Create New Product</h2> <hr>
     </div>
 
@@ -41,6 +43,7 @@
                 <input type="text" class="form-control input-lg" name="price" placeholder="$0.0" />
             </div>
             <button type="submit" class="btn btn-primary"><b>SUBMIT</b></button>
+
         </form>
     </div>
 </section>

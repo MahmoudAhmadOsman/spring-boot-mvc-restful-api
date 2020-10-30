@@ -5,11 +5,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Products Page | Mahmoud Osman</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <title>Products Page | Mahmoud Osman</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
         
     <link th:href="@{/css/style.css}" rel="stylesheet" />
 </head>
@@ -35,13 +36,14 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <!-- listProducts should match the variable that you specifid in the controller-->
+                    <!-- listProducts should match the variable that you specify in the controller-->
                     <tr th:each="product: ${listProducts}">
                         <td th:text="${product.id}"></td>
                         <td th:text="${product.name}"></td>
                         <td th:text="${product.brand}"></td>
                         <td th:text="${product.madein}"></td>
-                        <td th:text="${product.price}" class="text-danger"></td>
+                        <td th:inline="text">$[[${#numbers.formatDecimal(product.price, 0, 'COMMA', 2, 'POINT')}]]</td>
+
                         <td>
 
                             <a th:href="@{'/edit/' + ${product.id}}" class="btn btn-info btn-sm" title="Edit product">
@@ -58,7 +60,9 @@
         </div>
         <div class="col-md-2" style="background-color:#f9f9f9; color: #333; height: 100vh;">
             <h3>
-                <a href="products/new" class="btn btn-primary">Create New Products</a>
+                <a href="products/new" class="btn btn-primary">
+                    <i class="fa fa-plus"></i>
+                </a>
             </h3>
         </div>
     </div>
