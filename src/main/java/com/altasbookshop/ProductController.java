@@ -15,41 +15,42 @@ import java.util.List;
 
 //======= Product Controller ==========
 
-//Annotate this class with Spring Boot annotation class
+//@Annotate with Spring Boot Controller annotation  class
 @Controller
 public class ProductController {
-    //1st get the domain class here in controller
-    //2nd use autowire to let Spring inject product service here
+    //1st get the domain or @Service class here
+    //2nd use autowired to let Spring inject product service here
     @Autowired
     private ProductService productServiceservice;
 
-    //Now create a view that handles requests and use RequestMapping mvc
-    // And specify the route using double quotes
+    //@Annotate with RequestMapping
+    // then, specify the route
     @RequestMapping("/")
     public  String HomePage(Model model){
-        //use the List () method and get all the products
-        // this method is defined in the ProductService class
+        //use the List<Modal Class> method to get all the products
+
         List<Product> listProducts = productServiceservice.listAll();
         model.addAttribute("listProducts", listProducts);
 
-    //Now return the page you want this request to go
+    //Now return the page you want this request to go. in this case is the homepage or the index.html
         return  "index";
     }
 
 
-    //======= Creating New Product ==========
+    //======= CREATE METHOD ==========
 
-// Creating new product route
+// Create new product route
 //Map the form URL to /new page that holds the HTML form
 @RequestMapping("/products/new")
 public String showProduct(Model model){
-   //1st Create new product object
+   //1st, create new product object
     Product product = new Product();
     model.addAttribute("prodcut", product);
-    return  "create";     // new_product is the name of the form that holds the HTML form
+    return  "create"; // 'create' is the view that hold  html form
 }
 
 
+//SAVE METHOD
 //2nd Save the product into the database
 @RequestMapping(value = "/save", method = RequestMethod.POST)
 public String saveProduct(@ModelAttribute ("product") Product product){
@@ -61,21 +62,21 @@ public String saveProduct(@ModelAttribute ("product") Product product){
 
 
 
-//======= Edit product  ==========
+//======= EDIT METHOD  ==========
 @RequestMapping("/edit/{id}")
 public ModelAndView EditProduct(@PathVariable(name ="id") long id){
-        // [ModelAndView] => This class merely holds both to make it possible for a controller to return both model and view in a single return value
+        // [ModelAndView] => returns both model and view in a single return value
         ModelAndView edit = new ModelAndView("edit");
 
         Product product = productServiceservice.get(id);
         edit.addObject("product", product);
-        //edit.addObject("message", "EDIT successfully completed");
+        //edit.addObject("message", "Edit successfully completed");
 
     return edit;
 }
 
 
-//======= Delete product  ==========
+//======= DELETE METHOD  ==========
 
     @RequestMapping("/delete/{id}")
     public String deleteProduct(@PathVariable(name = "id") long id) {
