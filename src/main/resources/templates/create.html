@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="utf-8">
@@ -11,42 +10,41 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Products Page | Mahmoud Osman</title>
-        
     <link th:href="@{/css/style.css}" rel="stylesheet" />
-
 </head>
 
 <body>
-<section class="container">
-    <div class="create_header">
-        <a href="/" class="go_back">  <h5> <i class="fa fa-chevron-left" aria-hidden="true"></i> Go back</h5></a>
-        <h2 class="text-primary">Create New Product</h2> <hr>
-    </div>
-
-    <div class="col-md-8 col-md-offset-2">
-        <!--        th:object="${product}", should match the name you specified in the create (new) form attribute -->
-        <form action="#" th:action="@{/save}" th:object="${product}" method="POST">
-            <div class="form-group">
-                <label>Prodcut Name</label>
-                <input type="text" class="form-control input-lg" name="name" placeholder="Enter product name" required />
-            </div>
-            <div class="form-group">
-                <label>Prodcut Brand Name</label>
-                <input type="text" class="form-control input-lg" name="brand" placeholder="Enter product brand name" required />
-            </div>
-            <div class="form-group">
-                <label>Where the product is made?</label>
-                <input type="text" class="form-control input-lg" name="madein" placeholder="Where the product is made?" />
-            </div>
-            <div class="form-group">
-                <label>Price</label>
-                <input type="text" class="form-control input-lg" name="price" placeholder="$0.0" />
-            </div>
-            <button type="submit" class="btn btn-primary"><b>SUBMIT</b></button>
-
-        </form>
-    </div>
-</section>
+    <section class="container">
+        <div class="create_header">
+            <a href="/" class="go_back">
+                <h5> <i class="fa fa-chevron-left" aria-hidden="true"></i> Go back</h5>
+            </a>
+            <h2 class="text-primary">Create New Product</h2>
+            <hr>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+            <!--        th:object="${product}", should match the name you specified in the create (new) form attribute -->
+            <form action="#" th:action="@{/save}" th:object="${product}" method="POST">
+                <div class="form-group">
+                    <label>Prodcut Name</label>
+                    <input type="text" class="form-control input-lg" name="name" placeholder="Enter product name" required />
+                </div>
+                <div class="form-group">
+                    <label>Prodcut Brand Name</label>
+                    <input type="text" class="form-control input-lg" name="brand" placeholder="Enter product brand name" required />
+                </div>
+                <div class="form-group">
+                    <label>Where the product is made?</label>
+                    <input type="text" class="form-control input-lg" name="madein" placeholder="Where the product is made?" />
+                </div>
+                <div class="form-group">
+                    <label>Price</label>
+                    <input type="text" class="form-control input-lg" name="price" placeholder="$0.0" />
+                </div>
+                <button type="submit" class="btn btn-primary"><b>SUBMIT</b></button>
+            </form>
+        </div>
+    </section>
 </body>
 
 </html>
