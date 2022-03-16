@@ -7,7 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Product { // this will also create a product table in the database (MYSQL)
+public class Product { 
      
       @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
