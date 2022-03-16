@@ -8,21 +8,25 @@ import javax.persistence.Id;
 
 @Entity
 public class Product { // this will also create a product table in the database (MYSQL)
+     
+      @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    
     private String name;
     private String brand;
     private String madein;
     private Float price;
+    
+    
 //2. create an empty constructor
      protected Product() {
          //Super();
     }
 
-    //4. Add annotation for the ID from JPA to indicate that this matches the primary column in the database
-    // Next - GeneratedValue annotation from JPA
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    //3.
+ 
+  
+ 
     public Long getId() {
         return id;
     }
